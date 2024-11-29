@@ -10,10 +10,13 @@
 
 use num_derive::{FromPrimitive, ToPrimitive};
 use realsense_sys as sys;
+use serde::{Deserialize, Serialize};
 
 /// An enum for the various kinds of distortion models provided by librealsense2.
 #[repr(i32)]
-#[derive(FromPrimitive, ToPrimitive, Debug, Clone, Copy, PartialEq, Eq, Hash)]
+#[derive(
+    FromPrimitive, ToPrimitive, Debug, Clone, Copy, PartialEq, Eq, Hash, Serialize, Deserialize,
+)]
 pub enum Rs2DistortionModel {
     /// Rectilinear images. No distortion compensation required.
     None = sys::rs2_distortion_RS2_DISTORTION_NONE as i32,
