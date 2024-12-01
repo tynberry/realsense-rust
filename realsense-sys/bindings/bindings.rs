@@ -95,7 +95,7 @@ extern "C" {
 }
 #[doc = " \\brief Video stream intrinsics."]
 #[repr(C)]
-#[derive(Debug, Copy, Clone)]
+#[derive(Debug, Copy, Clone, Serialize, Deserialize)]
 pub struct rs2_intrinsics {
     #[doc = "< Width of the image in pixels"]
     pub width: ::std::os::raw::c_int,
@@ -1043,7 +1043,7 @@ extern "C" {
 }
 #[doc = " \\brief Cross-stream extrinsics: encodes the topology describing how the different devices are oriented."]
 #[repr(C)]
-#[derive(Debug, Copy, Clone)]
+#[derive(Debug, Copy, Clone, Serialize, Deserialize)]
 pub struct rs2_extrinsics {
     #[doc = "< Column-major 3x3 rotation matrix"]
     pub rotation: [f32; 9usize],

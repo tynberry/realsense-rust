@@ -13,7 +13,7 @@ use crate::{
     stream_profile::StreamProfile,
 };
 use anyhow::Result;
-use num_traits::FromPrimitive;
+
 use realsense_sys as sys;
 use std::{
     convert::{TryFrom, TryInto},

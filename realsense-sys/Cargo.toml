@@ -1,8 +1,8 @@
 [package]
 authors = [
-    "jerry73204 <jerry73204@gmail.com>",
-    "Jeremy Steward <jeremy.steward@tangramvision.com>",
-    "Brandon Minor <brandon@tangramvision.com>",
+  "jerry73204 <jerry73204@gmail.com>",
+  "Jeremy Steward <jeremy.steward@tangramvision.com>",
+  "Brandon Minor <brandon@tangramvision.com>",
 ]
 categories = ["external-ffi-bindings", "computer-vision", "hardware-support"]
 description = "Rust abstraction layer for the RealSense SDK C library"
@@ -29,6 +29,7 @@ docs-only = []
 
 [dependencies]
 # None required. However, access to the RealSense library is necessary.
+serde = { version = "1.0.215", features = ["derive"] }
 
 [build-dependencies]
 bindgen = { version = "0.69", optional = true }

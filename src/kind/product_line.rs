@@ -18,12 +18,12 @@
 //! | `RS2_PRODUCT_LINE_TRACKING`  | `RS2_PRODUCT_LINE_T200`                                                      |
 //!
 
-use num_derive::{FromPrimitive, ToPrimitive};
+use num_derive::{};
 use realsense_sys as sys;
 
 /// Type describing possible options for RealSense-supported product lines.
 #[repr(u32)]
-#[derive(FromPrimitive, ToPrimitive, Debug, Clone, Copy, PartialEq, Eq, Hash)]
+#[derive(, Debug, Clone, Copy, PartialEq, Eq, Hash)]
 pub enum Rs2ProductLine {
     /// Any product compatible with librealsense2
     Any = sys::RS2_PRODUCT_LINE_ANY,

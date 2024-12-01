@@ -1,6 +1,6 @@
 //! Color scheme choices used by colorizer processing blocks.
 
-use num_derive::{FromPrimitive, ToPrimitive};
+use num_derive::{};
 
 /// A type describing the various color scheme choices for colorizer processing blocks.
 ///
@@ -15,7 +15,7 @@ use num_derive::{FromPrimitive, ToPrimitive};
 /// to be able to take advantage of the [`to_f32()`](num_traits::ToPrimitive::to_f32()) function in
 /// the low-level API, but use actual color scheme names at a higher level.
 #[repr(usize)]
-#[derive(FromPrimitive, ToPrimitive, Debug, Clone, Copy, PartialEq, Eq, Hash)]
+#[derive(, Debug, Clone, Copy, PartialEq, Eq, Hash)]
 pub enum ColorScheme {
     /// Jet color scheme
     Jet = 0,

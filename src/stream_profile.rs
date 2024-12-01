@@ -42,7 +42,7 @@ use crate::{
     kind::{Rs2Exception, Rs2Format, Rs2StreamKind},
 };
 use anyhow::Result;
-use num_traits::FromPrimitive;
+
 use realsense_sys as sys;
 use std::{convert::TryFrom, mem::MaybeUninit, ptr::NonNull};
 use thiserror::Error;
