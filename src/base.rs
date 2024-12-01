@@ -1,7 +1,7 @@
 //! Common types and functions.
 
 use crate::kind::Rs2DistortionModel;
-use num_traits::FromPrimitive;
+
 use realsense_sys as sys;
 use serde::{Deserialize, Serialize};
 use std::{ffi::CString, time::Duration};

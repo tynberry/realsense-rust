@@ -15,7 +15,7 @@
 //! access the original enum value, you can do so with the following code:
 //!
 //! ```rust
-//! use num_traits::ToPrimitive;
+//! 
 //! use realsense_rust::kind::Rs2Extension;
 //!
 //! let ext = Rs2Extension::ColorSensor;
@@ -41,7 +41,7 @@
 //! If you need a workaround, you can always use the lower-level `realsense-sys` API:
 //!
 //! ```rust
-//! use num_traits::FromPrimitive;
+//! 
 //! use realsense_sys as sys;
 //! use realsense_rust::kind::Rs2CameraInfo;
 //!

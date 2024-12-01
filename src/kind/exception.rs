@@ -1,6 +1,6 @@
 //! Possible exception / error types that librealsense2 can produce
 
-use num_derive::{FromPrimitive, ToPrimitive};
+use num_derive::{};
 use realsense_sys as sys;
 use std::fmt::{Display, Formatter, Result};
 
@@ -9,7 +9,7 @@ use std::fmt::{Display, Formatter, Result};
 /// `Rs2Exception` is an enumeration where each variant describes the class of error returned by an
 /// [`rs2_error`](realsense_sys::rs2_error) pointer.
 #[repr(i32)]
-#[derive(FromPrimitive, ToPrimitive, Debug, Clone, Copy, PartialEq, Eq, Hash)]
+#[derive(, Debug, Clone, Copy, PartialEq, Eq, Hash)]
 pub enum Rs2Exception {
     /// Unknown error classification.
     ///
@@ -68,7 +68,7 @@ impl Display for Rs2Exception {
 #[cfg(test)]
 mod tests {
     use super::*;
-    use num_traits::FromPrimitive;
+    
 
     #[test]
     fn all_variants_exist() {

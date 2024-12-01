@@ -8,7 +8,7 @@ use crate::{
     kind::{Rs2Exception, Rs2ProductLine},
 };
 use anyhow::Result;
-use num_traits::ToPrimitive;
+
 use realsense_sys as sys;
 use std::{collections::HashSet, convert::From, path::Path, ptr::NonNull};
 use thiserror::Error;

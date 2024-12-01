@@ -7,11 +7,11 @@
 //! See the [RealSense post-processing documentation](https://dev.intelrealsense.com/docs/post-processing-filters)
 //! for more information.
 
-use num_derive::{FromPrimitive, ToPrimitive};
+use num_derive::{};
 
 /// A type describing the method that will be used to fill invalid pixels.
 #[repr(usize)]
-#[derive(FromPrimitive, ToPrimitive, Debug, Clone, Copy, PartialEq, Eq, Hash)]
+#[derive(, Debug, Clone, Copy, PartialEq, Eq, Hash)]
 pub enum HoleFillingMode {
     /// Use the value from the left neighbor pixel to fill the hole.
     FillFromLeft = 0,
