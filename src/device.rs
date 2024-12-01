@@ -15,6 +15,7 @@ use realsense_sys as sys;
 use std::{
     convert::{From, TryInto},
     ffi::CStr,
+    os::raw::c_int,
     ptr::NonNull,
 };
 use thiserror::Error;
@@ -198,6 +199,25 @@ impl Device {
 
             if err.as_ref().is_none() {
                 supports_info != 0
+            } else {
+                sys::rs2_free_error(err);
+                false
+            }
+        }
+    }
+
+    /// Set realtimeness of the device.
+    pub fn set_real_time(&self, realtime: bool) -> bool {
+        unsafe {
+            let mut err = std::ptr::null_mut::<sys::rs2_error>();
+            sys::rs2_playback_device_set_real_time(
+                self.get_raw().as_ptr(),
+                realtime as c_int,
+                &mut err,
+            );
+
+            if err.as_ref().is_none() {
+                true
             } else {
                 sys::rs2_free_error(err);
                 false
