@@ -15,7 +15,7 @@
 //! access the original enum value, you can do so with the following code:
 //!
 //! ```rust
-//! 
+//!
 //! use realsense_rust::kind::Rs2Extension;
 //!
 //! let ext = Rs2Extension::ColorSensor;
@@ -41,7 +41,7 @@
 //! If you need a workaround, you can always use the lower-level `realsense-sys` API:
 //!
 //! ```rust
-//! 
+//!
 //! use realsense_sys as sys;
 //! use realsense_rust::kind::Rs2CameraInfo;
 //!
@@ -55,19 +55,19 @@
 //! ```
 //!
 
-mod camera_info;
-mod color_scheme;
-mod distortion_model;
-mod exception;
-mod extension;
-mod format;
-mod frame_metadata;
-mod hole_filling;
-mod option;
-mod persistence_control;
-mod product_line;
-mod stream_kind;
-mod timestamp_domain;
+pub mod camera_info;
+pub mod color_scheme;
+pub mod distortion_model;
+pub mod exception;
+pub mod extension;
+pub mod format;
+pub mod frame_metadata;
+pub mod hole_filling;
+pub mod option;
+pub mod persistence_control;
+pub mod product_line;
+pub mod stream_kind;
+pub mod timestamp_domain;
 
 pub use camera_info::Rs2CameraInfo;
 pub use color_scheme::ColorScheme;

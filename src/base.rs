@@ -1,6 +1,7 @@
 //! Common types and functions.
 
 use crate::kind::Rs2DistortionModel;
+use num_traits::FromPrimitive;
 
 use realsense_sys as sys;
 use serde::{Deserialize, Serialize};
@@ -103,7 +104,7 @@ unsafe impl Send for Rs2Distortion {}
 /// documentation for [Rs2Distortion] for specifics on the available distortion models for RealSense devices.
 ///
 /// Use the function `stream_profile.intrinsics()` to retrieve these intrinsics from a certain stream.
-#[derive(Debug, Serialize, Deserialize)]
+#[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct Rs2Intrinsics(pub sys::rs2_intrinsics);
 
 impl Rs2Intrinsics {

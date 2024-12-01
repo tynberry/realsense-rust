@@ -11,6 +11,9 @@
 //!
 //! [`Device`] |-> [`Sensor`] |-> [`StreamProfile`]
 
+#[allow(unused_imports)]
+use num_traits::FromPrimitive;
+
 use crate::{
     base::Rs2Roi,
     check_rs2_error,

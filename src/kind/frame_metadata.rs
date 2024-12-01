@@ -1,6 +1,5 @@
 //! Enumeration of frame-specific metadata
 
-use num_derive::{};
 use realsense_sys as sys;
 
 /// A type describing the different metadata keys used to access frame metadata.
@@ -9,7 +8,7 @@ use realsense_sys as sys;
 /// these as `rs2_frame_metadata_value`; however these are clearly keys to metadata values.
 ///
 #[repr(i32)]
-#[derive(, Debug, Clone, Copy, PartialEq, Eq, Hash)]
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Hash)]
 pub enum Rs2FrameMetadata {
     /// A sequential index managed per-stream, counting up from the first frame at zero.
     FrameCounter = sys::rs2_frame_metadata_value_RS2_FRAME_METADATA_FRAME_COUNTER as i32,
@@ -161,7 +160,6 @@ pub enum Rs2FrameMetadata {
 #[cfg(test)]
 mod tests {
     use super::*;
-    
 
     #[test]
     fn all_variants_exist() {

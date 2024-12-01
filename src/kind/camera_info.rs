@@ -1,6 +1,5 @@
 //! Enumeration of sensor and device information keys.
 
-use num_derive::{};
 use realsense_sys as sys;
 
 /// A type describing the different keys used to access camera info from devices and sensors.
@@ -12,7 +11,7 @@ use realsense_sys as sys;
 /// types, or C-strings. We wrap these values in the `realsense-rust` API as `&CStr` types.
 ///
 #[repr(i32)]
-#[derive(, Debug, Clone, Copy, PartialEq, Eq, Hash)]
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Hash)]
 pub enum Rs2CameraInfo {
     /// The name of the sensor or device.
     Name = sys::rs2_camera_info_RS2_CAMERA_INFO_NAME as i32,
@@ -56,7 +55,6 @@ pub enum Rs2CameraInfo {
 #[cfg(test)]
 mod tests {
     use super::*;
-    
 
     #[test]
     fn all_variants_exist() {

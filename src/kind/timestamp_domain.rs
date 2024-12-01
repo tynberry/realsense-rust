@@ -2,14 +2,16 @@
 //!
 //! **NOTE**: Arrival timestamps from the frame are always in system time, whereas other timestamps
 //! (presentation and middle-exposure) will be in the frame's specified timestamp domain.
+#[allow(unused_imports)]
+use num_traits::FromPrimitive;
 
-use num_derive::{};
+use num_derive::{FromPrimitive, ToPrimitive};
 use realsense_sys as sys;
 use std::ffi::CStr;
 
 /// Enumeration of possible timestamp domains that frame timestamps are delivered in.
 #[repr(i32)]
-#[derive(, Debug, Clone, Copy, PartialEq, Eq, Hash)]
+#[derive(FromPrimitive, ToPrimitive, Debug, Clone, Copy, PartialEq, Eq, Hash)]
 pub enum Rs2TimestampDomain {
     /// Timestamp is measured in relation to the device's internal clock
     HardwareClock = sys::rs2_timestamp_domain_RS2_TIMESTAMP_DOMAIN_HARDWARE_CLOCK as i32,
@@ -49,7 +51,6 @@ impl ToString for Rs2TimestampDomain {
 #[cfg(test)]
 mod tests {
     use super::*;
-    
 
     #[test]
     fn all_variants_exist() {

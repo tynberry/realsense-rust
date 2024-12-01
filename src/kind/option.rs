@@ -10,7 +10,7 @@
 //! an error in operation.
 
 use super::Rs2Exception;
-use num_derive::{};
+use num_derive::{FromPrimitive, ToPrimitive};
 use realsense_sys as sys;
 use std::ffi::CStr;
 use thiserror::Error;
@@ -73,7 +73,7 @@ pub enum OptionSetError {
 /// - Old Description: "Reset Camera Accuracy metric (if affected by TriggerCameraAccuracyHealth
 /// option)."
 #[repr(i32)]
-#[derive(, Debug, Clone, Copy, PartialEq, Eq, Hash)]
+#[derive(FromPrimitive, ToPrimitive, Debug, Clone, Copy, PartialEq, Eq, Hash)]
 pub enum Rs2Option {
     /// Enable/disable color backlight compensation.
     BacklightCompensation = sys::rs2_option_RS2_OPTION_BACKLIGHT_COMPENSATION as i32,
@@ -334,7 +334,6 @@ pub struct Rs2OptionRange {
 #[cfg(test)]
 mod tests {
     use super::*;
-    
 
     #[test]
     fn all_variants_exist() {

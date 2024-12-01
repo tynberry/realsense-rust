@@ -1,5 +1,4 @@
 //! Possible interface extensions as an enumeration.
-use num_derive::{};
 use realsense_sys as sys;
 
 /// Enumeration of interface extensions
@@ -89,7 +88,7 @@ use realsense_sys as sys;
 /// * [`Rs2Extension::Roi`]
 #[allow(missing_docs)]
 #[repr(i32)]
-#[derive(, Debug, Clone, Copy, PartialEq, Eq, Hash)]
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Hash)]
 pub enum Rs2Extension {
     // sensor
     /// Color sensor
@@ -296,7 +295,6 @@ pub const MISC_EXTENSIONS: [Rs2Extension; 15] = [
 #[cfg(test)]
 mod tests {
     use super::*;
-    
 
     #[test]
     fn all_variants_exist() {

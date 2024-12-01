@@ -1,11 +1,11 @@
 //! Enumeration of frame data format & layout
 
-use num_derive::{};
+use num_derive::{FromPrimitive, ToPrimitive};
 use realsense_sys as sys;
 
 /// A type representing all possible data formats for raw frame data
 #[repr(i32)]
-#[derive(, Debug, Clone, Copy, PartialEq, Eq, Hash)]
+#[derive(FromPrimitive, ToPrimitive, Debug, Clone, Copy, PartialEq, Eq, Hash)]
 pub enum Rs2Format {
     /// Format key used to tell librealsense2 to pick the best suited format.
     ///
@@ -118,7 +118,6 @@ pub enum Rs2Format {
 #[cfg(test)]
 mod tests {
     use super::*;
-    
 
     #[test]
     fn all_variants_exist() {

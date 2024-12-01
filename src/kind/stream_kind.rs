@@ -2,15 +2,18 @@
 //!
 //! Streams are different types of data provided by RealSense devices.
 
-use num_derive::{};
+use num_derive::{FromPrimitive, ToPrimitive};
 use realsense_sys as sys;
+use serde::{Deserialize, Serialize};
 
 /// The enumeration of possible stream kinds.
 ///
 /// These are typically used when configuring a [`pipeline`](crate::pipeline::InactivePipeline), or
 /// obtained from a [`StreamProfile`](crate::stream_profile::StreamProfile).
 #[repr(i32)]
-#[derive(, Debug, Clone, Copy, PartialEq, Eq, Hash)]
+#[derive(
+    FromPrimitive, ToPrimitive, Debug, Clone, Copy, PartialEq, Eq, Hash, Serialize, Deserialize,
+)]
 pub enum Rs2StreamKind {
     /// Stream kind key to tell librealsense2 to pick the best suited stream kind.
     ///
@@ -62,7 +65,6 @@ impl std::fmt::Display for Rs2StreamKind {
 #[cfg(test)]
 mod tests {
     use super::*;
-    
 
     #[test]
     fn all_variants_exist() {

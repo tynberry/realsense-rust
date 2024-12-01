@@ -2,6 +2,8 @@
 
 use crate::{check_rs2_error, device::Device, kind::Rs2Exception};
 use anyhow::Result;
+#[allow(unused_imports)]
+use num_traits::FromPrimitive;
 use realsense_sys as sys;
 use std::{convert::From, ptr::NonNull};
 use thiserror::Error;

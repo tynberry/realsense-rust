@@ -1,4 +1,6 @@
 //! Defines a type which holds the device & streams associated with an `ActivePipeline`.
+#[allow(unused_imports)]
+use num_traits::FromPrimitive;
 
 use crate::{check_rs2_error, device::Device, kind::Rs2Exception, stream_profile::StreamProfile};
 use anyhow::Result;

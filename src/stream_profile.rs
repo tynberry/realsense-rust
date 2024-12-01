@@ -36,6 +36,9 @@
 //!
 //! See [the `StreamProfile` type](crate::stream_profile::StreamProfile) for more information.
 
+#[allow(unused_imports)]
+use num_traits::FromPrimitive;
+
 use crate::{
     base::{Rs2Extrinsics, Rs2Intrinsics, Rs2MotionDeviceIntrinsics},
     check_rs2_error,

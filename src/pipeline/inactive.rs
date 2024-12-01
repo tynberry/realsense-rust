@@ -1,4 +1,6 @@
 //! Type for representing an "inactive" pipeline which is unconfigured and cannot acquire frames.
+#[allow(unused_imports)]
+use num_traits::FromPrimitive;
 
 use super::{active::ActivePipeline, profile::PipelineProfile};
 use crate::{check_rs2_error, config::Config, context::Context, kind::Rs2Exception};

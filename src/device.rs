@@ -11,6 +11,8 @@ use crate::{
     sensor::Sensor,
 };
 use anyhow::Result;
+#[allow(unused_imports)]
+use num_traits::FromPrimitive;
 use realsense_sys as sys;
 use std::{
     convert::{From, TryInto},

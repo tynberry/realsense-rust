@@ -1,11 +1,9 @@
 //! The enumeration of persistence controls.
 
-use num_derive::{};
-
 /// An enumeration of the various persistence controls used in processing blocks.
 #[allow(missing_docs)]
 #[repr(usize)]
-#[derive(, Debug, Clone, Copy, PartialEq, Eq, Hash)]
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Hash)]
 pub enum PersistenceControl {
     /// Persistence control is disabled
     Disabled = 0,

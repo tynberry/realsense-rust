@@ -1,7 +1,5 @@
 //! Color scheme choices used by colorizer processing blocks.
 
-use num_derive::{};
-
 /// A type describing the various color scheme choices for colorizer processing blocks.
 ///
 /// This name of this type is not preceded with `Rs2` because this does not map to a librealsense2
@@ -15,7 +13,7 @@ use num_derive::{};
 /// to be able to take advantage of the [`to_f32()`](num_traits::ToPrimitive::to_f32()) function in
 /// the low-level API, but use actual color scheme names at a higher level.
 #[repr(usize)]
-#[derive(, Debug, Clone, Copy, PartialEq, Eq, Hash)]
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Hash)]
 pub enum ColorScheme {
     /// Jet color scheme
     Jet = 0,

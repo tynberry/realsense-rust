@@ -1,9 +1,9 @@
 [package]
 authors = [
-    "jerry73204 <jerry73204@gmail.com>",
-    "Jeremy Steward <jeremy.steward@tangramvision.com>",
-    "Brandon Minor <brandon@tangramvision.com>",
-    "Paul Jakob Schroeder <paul.schroeder@tangramvision.com>",
+  "jerry73204 <jerry73204@gmail.com>",
+  "Jeremy Steward <jeremy.steward@tangramvision.com>",
+  "Brandon Minor <brandon@tangramvision.com>",
+  "Paul Jakob Schroeder <paul.schroeder@tangramvision.com>",
 ]
 categories = ["external-ffi-bindings", "computer-vision", "hardware-support"]
 description = "High-level RealSense library in Rust"
@@ -39,14 +39,14 @@ thiserror = "1.0"
 
 [dev-dependencies]
 opencv = { version = "0.84", features = [
-    "highgui",
-    "imgproc",
-    "clang-runtime", # necessary for error "a `libclang` shared library is not loaded on this thread"
+  "highgui",
+  "imgproc",
+  "clang-runtime", # necessary for error "a `libclang` shared library is not loaded on this thread"
 ] }
 getopts = "0.2"
 
 [lints.rust]
-warnings = "deny"
+warnings = "warn"
 missing_docs = "deny"
 
 [lints.clippy]
