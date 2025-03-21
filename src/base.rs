@@ -88,7 +88,7 @@ unsafe impl Send for Rs2MotionDeviceIntrinsics {}
 ///
 /// The Intel RealSense documentation claims that "Other models are subject to their own interpretations". This is
 /// admittedly not too helpful, but it's worth noting in case your model isn't covered here.
-#[derive(Debug, Serialize, Deserialize)]
+#[derive(Debug, Clone)]
 pub struct Rs2Distortion {
     /// Distortion model of the image.
     pub model: Rs2DistortionModel,
@@ -104,7 +104,7 @@ unsafe impl Send for Rs2Distortion {}
 /// documentation for [Rs2Distortion] for specifics on the available distortion models for RealSense devices.
 ///
 /// Use the function `stream_profile.intrinsics()` to retrieve these intrinsics from a certain stream.
-#[derive(Debug, Clone, Serialize, Deserialize)]
+#[derive(Debug, Clone)]
 pub struct Rs2Intrinsics(pub sys::rs2_intrinsics);
 
 impl Rs2Intrinsics {
@@ -148,7 +148,7 @@ unsafe impl Send for Rs2Intrinsics {}
 ///
 /// Use the function `stream_profile.extrinsics()` to retrieve these extrinsics from a certain stream in relation to
 /// another stream on the same device.
-#[derive(Debug, Serialize, Deserialize)]
+#[derive(Debug)]
 pub struct Rs2Extrinsics(pub sys::rs2_extrinsics);
 
 impl Rs2Extrinsics {
